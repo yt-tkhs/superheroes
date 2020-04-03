@@ -1,7 +1,7 @@
 include(":android:app")
 
 // Shared
-include(":core", ":data")
+include(":shared:core", ":shared:data")
 
 rootProject.name = "Superheroes"
 enableFeaturePreview("GRADLE_METADATA")

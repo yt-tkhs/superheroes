@@ -33,7 +33,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                api(project(":data"))
+                api(project(":shared:data"))
                 implementation(kotlin("stdlib-common", Versions.kotlin))
                 implementation(Deps.Coroutines.common)
                 implementation(Deps.Koin.core)

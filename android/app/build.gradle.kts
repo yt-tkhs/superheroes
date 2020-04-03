@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
+    implementation(project(":shared:core"))
 
     implementation(kotlin("stdlib-jdk8", Versions.kotlin))
 
