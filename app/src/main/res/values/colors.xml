@@ -3,4 +3,21 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="black">#121212</color>
+    <color name="nero">#1B1B1B</color>
+    <color name="night_rider">#2B2B2B</color>
+
+    <color name="marvel_red">#F0131E</color>
+    <color name="marvel_red_variant">#C00F18</color>
+
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="text_black_primary">#DE000000</color>
+    <color name="text_black_secondary">#8A000000</color>
+    <color name="text_black_tertiary">#61000000</color>
+
+    <color name="text_white_primary">#FFFFFFFF</color>
+    <color name="text_white_secondary">#B3FFFFFF</color>
+    <color name="text_white_tertiary">#80FFFFFF</color>
 </resources>

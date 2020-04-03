@@ -3,8 +3,10 @@
 package app.ytak.superheroes.data.di
 
 import app.ytak.superheroes.data.HttpClientProvider
-import app.ytak.superheroes.data.api.ComicApi
-import app.ytak.superheroes.data.api.ComicApiImpl
+import app.ytak.superheroes.data.api.comic.ComicApi
+import app.ytak.superheroes.data.api.comic.ComicApiImpl
+import app.ytak.superheroes.data.repository.ComicRepository
+import app.ytak.superheroes.data.repository.ComicRepositoryImpl
 import io.ktor.client.HttpClient
 import org.koin.dsl.module
 
@@ -16,4 +18,8 @@ val dataModule = module {
 
 val apiModule = module {
     single<ComicApi> { ComicApiImpl(get()) }
+}
+
+val repositoryModule = module {
+    single<ComicRepository> { ComicRepositoryImpl(get()) }
 }

@@ -8,15 +8,18 @@ object Versions {
 
     const val kotlin = "1.3.61"
     const val androidX = "1.1.0"
+    const val navigation = "2.3.0-alpha04"
+    const val lifecycle = "2.3.0-alpha01"
     const val androidDradlePlugin = "4.0.0-beta03"
     const val junit = "4.12"
     const val sqlDelight = "1.2.1"
     const val ktor = "1.2.6"
     const val stately = "0.9.5"
     const val multiplatformSettings = "0.5"
+    const val insetter = "0.2.1"
+    const val epoxy = "3.9.0"
     const val coroutines = "1.3.3-native-mt"
     const val koin = "3.0.0-alpha-8"
-    const val serialization = "0.14.0"
     const val kotlinNativeCocoapods = "0.6"
     const val klock = "1.7.0"
     const val buildKonfig = "0.5.0"
@@ -24,7 +27,7 @@ object Versions {
 
 object Deps {
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.androidDradlePlugin}"
-    const val material = "com.google.android.material:material:${Versions.androidX}"
+    const val material = "com.google.android.material:material:1.2.0-alpha05"
     const val stately = "co.touchlab:stately:${Versions.stately}"
     const val kotlinNativeCocoapods = "co.touchlab:kotlinnativecocoapods:${Versions.kotlinNativeCocoapods}"
     const val klock = "com.soywiz.korlibs.klock:klock:${Versions.klock}"
@@ -34,9 +37,25 @@ object Deps {
     const val junit = "junit:junit:${Versions.junit}"
 
     object AndroidX {
-        const val coreKtx = "androidx.core:core-ktx:${Versions.androidX}"
-        const val appCompat = "androidx.appcompat:appcompat:${Versions.androidX}"
-        const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.androidX}"
+        const val coreKtx = "androidx.core:core-ktx:1.3.0-alpha02"
+        const val appCompat = "androidx.appcompat:appcompat:1.2.0-alpha03"
+        const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
+        const val recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
+        const val viewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
+    }
+
+    object Lifecycle {
+        const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+        const val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+        const val savedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.lifecycle}"
+        const val compiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}"
+        const val commonJava8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"
+    }
+
+    object Navigation {
+        const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+        const val uiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+        const val testing = "androidx.navigation:navigation-testing:${Versions.navigation}"
     }
 
     object Coroutines {
@@ -75,12 +94,21 @@ object Deps {
     object Koin {
         const val core = "org.koin:koin-core:${Versions.koin}"
         const val android = "org.koin:koin-android:${Versions.koin}"
+        const val androidViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
     }
 
     object MultiplatformSettings {
         const val core = "com.russhwolf:multiplatform-settings:${Versions.multiplatformSettings}"
         const val test = "com.russhwolf:multiplatform-settings-test:${Versions.multiplatformSettings}"
     }
+
+    object Insetter {
+        const val core = "dev.chrisbanes:insetter:${Versions.insetter}"
+        const val ktx = "dev.chrisbanes:insetter-ktx:${Versions.insetter}"
+    }
+
+    const val groupie = "com.xwray:groupie:2.7.0"
+    const val coil = "io.coil-kt:coil:0.9.5"
 
     object AndroidXTest {
         const val core = "androidx.test:core:${Versions.androidX}"

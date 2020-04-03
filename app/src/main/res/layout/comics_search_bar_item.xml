@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textview.MaterialTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/searchView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_small"
+    android:layout_marginTop="@dimen/margin_small"
+    android:layout_marginEnd="@dimen/margin_small"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:background="?colorSecondaryVariant"
+    android:gravity="center_vertical"
+    android:paddingStart="@dimen/margin_large"
+    android:paddingTop="@dimen/margin_medium"
+    android:paddingEnd="@dimen/margin_large"
+    android:paddingBottom="@dimen/margin_medium"
+    android:text="@string/comics_search_hint"
+    android:textAppearance="?textAppearanceCaption"
+    app:drawableEndCompat="@drawable/ic_search"
+    app:drawableTint="?android:textColorSecondary"
+    />

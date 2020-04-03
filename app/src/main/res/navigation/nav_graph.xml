@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/destination_comics">
+
+    <fragment
+        android:id="@+id/destination_comics"
+        android:name="app.ytak.superheroes.comics.ComicsFragment"
+        android:label="Comics" />
+
+    <fragment
+        android:id="@+id/destination_series"
+        android:name="app.ytak.superheroes.series.SeriesFragment"
+        android:label="Series" />
+
+    <fragment
+        android:id="@+id/destination_characters"
+        android:name="app.ytak.superheroes.characters.CharactersFragment"
+        android:label="Characters" />
+</navigation>

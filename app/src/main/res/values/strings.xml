@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">superheroes</string>
+    <string name="app_name">Superheroes</string>
+
+    <!-- Main -->
+    <string name="comics">Comics</string>
+    <string name="characters">Characters</string>
+    <string name="series">Series</string>
+
+    <!-- Comics -->
+    <string name="comics_search_hint">Search comics, series or characters…</string>
+    <string name="comics_sub_header_releasing_this_month">Releasing This Month</string>
 </resources>

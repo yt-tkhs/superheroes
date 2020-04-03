@@ -2,6 +2,7 @@ package app.ytak.superheroes
 
 import android.app.Application
 import app.ytak.superheroes.core.di.initKoin
+import app.ytak.superheroes.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import timber.log.Timber
 
@@ -12,6 +13,7 @@ class SuperheroesApp : Application() {
         Timber.plant(Timber.DebugTree())
         initKoin {
             androidContext(this@SuperheroesApp)
+            modules(viewModelModule)
         }
     }
 }
