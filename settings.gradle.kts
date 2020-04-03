@@ -1,4 +1,4 @@
-include(":app")
+include(":android:app")
 
 // Shared
 include(":core", ":data")
