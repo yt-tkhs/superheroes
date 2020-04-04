@@ -12,7 +12,7 @@ object Versions {
     const val androidX = "1.1.0"
     const val navigation = "2.3.0-alpha04"
     const val lifecycle = "2.3.0-alpha01"
-    const val androidDradlePlugin = "4.0.0-beta03"
+    const val androidGradlePlugin = "4.0.0-beta03"
     const val junit = "4.12"
     const val sqlDelight = "1.2.1"
     const val ktor = "1.2.6"
@@ -28,7 +28,7 @@ object Versions {
 }
 
 object Deps {
-    const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.androidDradlePlugin}"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
     const val material = "com.google.android.material:material:1.2.0-alpha05"
     const val stately = "co.touchlab:stately:${Versions.stately}"
     const val kotlinNativeCocoapods = "co.touchlab:kotlinnativecocoapods:${Versions.kotlinNativeCocoapods}"
