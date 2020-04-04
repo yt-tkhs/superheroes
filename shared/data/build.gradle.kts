@@ -1,6 +1,5 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -17,9 +16,10 @@ android {
     defaultConfig {
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
-        versionCode = 1
-        versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        buildConfig = false
     }
 }
 
@@ -108,11 +108,3 @@ buildkonfig {
         buildConfigField(Type.STRING, "MARVEL_PRIVATE_KEY", localProperties.getProperty("marvel.privateKey"))
     }
 }
-
-val NamedDomainObjectContainer<KotlinSourceSet>.androidMain: NamedDomainObjectProvider<KotlinSourceSet>
-    get() = named<KotlinSourceSet>("androidMain")
-
-val NamedDomainObjectContainer<KotlinSourceSet>.iosMain: NamedDomainObjectProvider<KotlinSourceSet>
-    get() = named<KotlinSourceSet>("iosMain")
-
-

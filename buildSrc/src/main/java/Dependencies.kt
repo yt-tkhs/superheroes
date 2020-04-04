@@ -5,6 +5,8 @@ object Versions {
     const val minSdk = 21
     const val compileSdk = 29
     const val targetSdk = 29
+    const val versionCode = 1
+    const val versionName = "1.0"
 
     const val kotlin = "1.3.61"
     const val androidX = "1.1.0"

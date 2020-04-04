@@ -12,8 +12,8 @@ android {
         applicationId = "app.ytak.superheroes"
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = Versions.versionCode
+        versionName = Versions.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     packagingOptions {

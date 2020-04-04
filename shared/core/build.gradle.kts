@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -13,6 +12,11 @@ android {
     defaultConfig {
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
+        versionCode = Versions.versionCode
+        versionName = Versions.versionName
+    }
+    buildFeatures {
+        buildConfig = false
     }
 }
 
@@ -53,11 +57,5 @@ kotlin {
         }
     }
 }
-
-val NamedDomainObjectContainer<KotlinSourceSet>.androidMain: NamedDomainObjectProvider<KotlinSourceSet>
-    get() = named<KotlinSourceSet>("androidMain")
-
-val NamedDomainObjectContainer<KotlinSourceSet>.iosMain: NamedDomainObjectProvider<KotlinSourceSet>
-    get() = named<KotlinSourceSet>("iosMain")
 
 
