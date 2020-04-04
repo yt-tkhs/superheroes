@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="comics_search_hint">Search comics, series or characters…</string>
+    <string name="comics_sub_header_releasing_this_month">Releasing This Month</string>
+</resources>

@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import app.ytak.superheroes.comics.ComicsViewModel
 import app.ytak.superheroes.data.api.OrderBy
 import app.ytak.superheroes.data.api.comic.ComicApi
 import app.ytak.superheroes.data.api.comic.query.DateDescriptor
 import app.ytak.superheroes.databinding.MainActivityBinding
+import app.ytak.superheroes.features.comics.ComicsViewModel
 import dev.chrisbanes.insetter.setEdgeToEdgeSystemUiFlags
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

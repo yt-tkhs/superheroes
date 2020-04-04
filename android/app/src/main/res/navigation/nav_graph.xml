@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/destination_comics"
-        android:name="app.ytak.superheroes.comics.ComicsFragment"
+        android:name="app.ytak.superheroes.features.comics.ComicsFragment"
         android:label="Comics" />
 
     <fragment

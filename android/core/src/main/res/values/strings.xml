@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Superheroes</string>
+
+    <!-- Main -->
+    <string name="comics">Comics</string>
+    <string name="characters">Characters</string>
+    <string name="series">Series</string>
+</resources>
