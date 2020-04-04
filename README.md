@@ -1,4 +1,4 @@
-<img src="https://github.com/yt-tkhs/superheroes/blob/master/art/comics.png" width="250" align="right" width="30%"/>
+<img src="https://github.com/yt-tkhs/superheroes/blob/master/art/comics.webp" width="250" align="right" width="30%"/>
     
 # Superheroes
 
