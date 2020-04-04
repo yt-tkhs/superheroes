@@ -1,18 +1,9 @@
-
 <div style="block: inline-block;">
-
-<div style="float: left; width: 70%; padding: 0 15px 0 0;">
-
+<img src="https://github.com/yt-tkhs/superheroes/blob/master/art/comics.png" width="250" align="right" width="30%"/>
+    
 # Superheroes
 
 Superheros is an experimental project for Kotlin multiplatform using [the Marvel Comics API](https://developer.marvel.com/).
-</div>
-
-<div style="float: left; width: 30%;">
-
-<img src="https://github.com/yt-tkhs/superheroes/blob/master/art/comics.png" width="250"/>
-
-</div>
 
 </div>
 
