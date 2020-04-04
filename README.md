@@ -2,7 +2,7 @@
     
 # Superheroes
 
-Superheros is an experimental project for Kotlin multiplatform using [the Marvel Comics API](https://developer.marvel.com/).
+Superheroes is an experimental project for Kotlin multiplatform using [the Marvel Comics API](https://developer.marvel.com/).
 
 <br />
 <br />
