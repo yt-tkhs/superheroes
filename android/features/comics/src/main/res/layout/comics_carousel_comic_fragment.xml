@@ -29,7 +29,7 @@
         android:layout_marginBottom="@dimen/margin_x_large"
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1.529"
+        app:layout_constraintDimensionRatio="@string/comic_dimension_ratio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />

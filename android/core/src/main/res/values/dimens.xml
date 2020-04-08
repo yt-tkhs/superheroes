@@ -18,4 +18,6 @@
     <dimen name="bottom_navigation_height">56dp</dimen>
 
     <dimen name="radius_comics_surface">32dp</dimen>
+
+    <string name="comic_dimension_ratio">h,1:1.529</string>
 </resources>

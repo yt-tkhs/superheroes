@@ -1,9 +1,7 @@
 package app.ytak.superheroes.data.api.comic
 
 import app.ytak.superheroes.data.api.OrderBy
-import app.ytak.superheroes.data.api.comic.query.ComicFormat
-import app.ytak.superheroes.data.api.comic.query.ComicFormatType
-import app.ytak.superheroes.data.api.comic.query.DateDescriptor
+import app.ytak.superheroes.data.api.comic.query.*
 import app.ytak.superheroes.data.authorized
 import app.ytak.superheroes.data.dto.ComicResponse
 import app.ytak.superheroes.data.marvelUrl
@@ -18,18 +16,11 @@ interface ComicApi {
         formatType: ComicFormatType? = null,
         noVariants: Boolean? = null,
         dateDescriptor: DateDescriptor? = null,
+        dateRange: DateRange? = null,
         limit: Int? = null,
         offset: Int? = null,
         orderBy: OrderBy<OrderByAttribute>? = null
     ): ComicResponse
-
-    enum class OrderByAttribute(override val keyName: String) : OrderBy.Attribute {
-        FocDate("focDate"),
-        OnsaleDate("onsaleDate"),
-        Title("title"),
-        IssueNumber("issueNumber"),
-        Modified("modified")
-    }
 }
 
 internal class ComicApiImpl(private val httpClient: HttpClient) : ComicApi {
@@ -39,9 +30,10 @@ internal class ComicApiImpl(private val httpClient: HttpClient) : ComicApi {
         formatType: ComicFormatType?,
         noVariants: Boolean?,
         dateDescriptor: DateDescriptor?,
+        dateRange: DateRange?,
         limit: Int?,
         offset: Int?,
-        orderBy: OrderBy<ComicApi.OrderByAttribute>?
+        orderBy: OrderBy<OrderByAttribute>?
     ): ComicResponse = httpClient.get {
         authorized()
         marvelUrl("comics")
@@ -49,6 +41,7 @@ internal class ComicApiImpl(private val httpClient: HttpClient) : ComicApi {
         formatType?.let { parameter("formatType", it.code) }
         noVariants?.let { parameter("noVariants", it) }
         dateDescriptor?.let { parameter("dateDescriptor", it.code) }
+        dateRange?.let { parameter("dateRange", it.code) }
         limit?.let { parameter("limit", it) }
         offset?.let { parameter("offset", it) }
         orderBy?.let { parameter("orderBy", it.code) }

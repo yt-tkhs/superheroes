@@ -16,7 +16,7 @@
         android:elevation="2dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@id/titleText"
-        app:layout_constraintDimensionRatio="h,1:1.529"
+        app:layout_constraintDimensionRatio="@string/comic_dimension_ratio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

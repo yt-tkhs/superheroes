@@ -2,10 +2,12 @@ package app.ytak.superheroes.data.repository
 
 import app.ytak.superheroes.data.api.OrderBy
 import app.ytak.superheroes.data.api.comic.ComicApi
-import app.ytak.superheroes.data.api.comic.query.ComicFormat
-import app.ytak.superheroes.data.api.comic.query.ComicFormatType
-import app.ytak.superheroes.data.api.comic.query.DateDescriptor
-import app.ytak.superheroes.data.dto.Comic
+import app.ytak.superheroes.data.api.comic.query.*
+import app.ytak.superheroes.data.model.Comic
+import app.ytak.superheroes.data.model.toComic
+import com.soywiz.klock.DateTime
+import com.soywiz.klock.MonthSpan
+import com.soywiz.klock.plus
 
 interface ComicRepository {
 
@@ -13,7 +15,7 @@ interface ComicRepository {
         offset: Int
     ): List<Comic>
 
-    suspend fun fetchComicsOnsaleThisWeek(
+    suspend fun fetchComicsOnsaleFuture(
         offset: Int
     ): List<Comic>
 }
@@ -30,21 +32,22 @@ internal class ComicRepositoryImpl(
             dateDescriptor = DateDescriptor.ThisMonth,
             limit = 30,
             offset = offset,
-            orderBy = OrderBy(ComicApi.OrderByAttribute.OnsaleDate).desc()
+            orderBy = OrderBy(OrderByAttribute.OnsaleDate).desc()
         )
-        return response.data.results
+        return response.data.results.map { it.toComic() }
     }
 
-    override suspend fun fetchComicsOnsaleThisWeek(offset: Int): List<Comic> {
+    override suspend fun fetchComicsOnsaleFuture(offset: Int): List<Comic> {
+        val now = DateTime.now().date
         val response = comicApi.fetchComics(
             format = ComicFormat.Comic,
             formatType = ComicFormatType.Comic,
             noVariants = true,
-            dateDescriptor = DateDescriptor.NextWeek,
+            dateRange = DateRange(from = now, to = now.plus(MonthSpan(1))),
             limit = 5,
             offset = offset,
-            orderBy = OrderBy(ComicApi.OrderByAttribute.OnsaleDate).desc()
+            orderBy = OrderBy(OrderByAttribute.OnsaleDate).desc()
         )
-        return response.data.results
+        return response.data.results.map { it.toComic() }
     }
 }

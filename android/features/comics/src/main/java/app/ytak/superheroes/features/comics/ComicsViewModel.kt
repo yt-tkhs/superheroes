@@ -5,7 +5,7 @@ import app.ytak.superheroes.common.extfun.updateListWithLoading
 import app.ytak.superheroes.common.extfun.updateWithLoading
 import app.ytak.superheroes.core.AsyncListState
 import app.ytak.superheroes.core.AsyncState
-import app.ytak.superheroes.data.dto.Comic
+import app.ytak.superheroes.data.model.Comic
 import app.ytak.superheroes.data.repository.ComicRepository
 import kotlinx.coroutines.launch
 
@@ -27,7 +27,7 @@ class ComicsViewModel(
 
     fun refreshThisWeekComics() = viewModelScope.launch {
         _thisWeekComics.updateWithLoading {
-            comicRepository.fetchComicsOnsaleThisWeek(0)
+            comicRepository.fetchComicsOnsaleFuture(0)
         }
     }
 

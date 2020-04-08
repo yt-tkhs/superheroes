@@ -11,21 +11,21 @@ data class ComicResponse(
     val copyright: String,
     val attributionText: String,
     val attributionHTML: String,
-    val data: ComicDataContainer,
+    val data: ResponseComicDataContainer,
     val etag: String
 )
 
 @Serializable
-data class ComicDataContainer(
+data class ResponseComicDataContainer(
     val offset: Int,
     val limit: Int,
     val total: Int,
     val count: Int,
-    val results: List<Comic>
+    val results: List<ResponseComic>
 )
 
 @Serializable
-data class Comic(
+data class ResponseComic(
     val id: Int,
     val digitalId: Int,
     val title: String,
@@ -41,50 +41,50 @@ data class Comic(
     val issn: String,
     val format: String,
     val pageCount: Int,
-    val textObjects: List<TextObject>,
+    val textObjects: List<ResponseTextObject>,
     val resourceURI: String,
-    val urls: List<Url>,
-    val series: SeriesSummary,
-    val variants: List<ComicSummary>,
-    val collections: List<ComicSummary>,
-    val collectedIssues: List<ComicSummary>,
-    val dates: List<ComicDate>,
-    val prices: List<ComicPrice>,
-    val thumbnail: Image,
-    val images: List<Image>,
-    val creators: Sublist<CreatorSummary>,
-    val characters: Sublist<CharacterSummary>,
-    val stories: Sublist<StorySummary>,
-    val events: Sublist<EventSummary>
+    val urls: List<ResponseUrl>,
+    val series: ResponseSeriesSummary,
+    val variants: List<ResponseComicSummary>,
+    val collections: List<ResponseComicSummary>,
+    val collectedIssues: List<ResponseComicSummary>,
+    val dates: List<ResponseComicDate>,
+    val prices: List<ResponseComicPrice>,
+    val thumbnail: ResponseImage,
+    val images: List<ResponseImage>,
+    val creators: ResponseSummaryList<ResponseCreatorSummary>,
+    val characters: ResponseSummaryList<ResponseCharacterSummary>,
+    val stories: ResponseSummaryList<ResponseStorySummary>,
+    val events: ResponseSummaryList<ResponseEventSummary>
 )
 
 @Serializable
-data class TextObject(
+data class ResponseTextObject(
     val type: String,
     val language: String,
     val text: String
 )
 
 @Serializable
-data class Url(
+data class ResponseUrl(
     val type: String,
     val url: String
 )
 
 @Serializable
-data class SeriesSummary(
+data class ResponseSeriesSummary(
     val resourceURI: String,
     val name: String
 )
 
 @Serializable
-data class ComicSummary(
+data class ResponseComicSummary(
     val resourceURI: String,
     val name: String
 )
 
 @Serializable
-data class ComicDate(
+data class ResponseComicDate(
     val type: String,
 
     @Serializable(DateTimeTzSerializer::class)
@@ -92,13 +92,13 @@ data class ComicDate(
 )
 
 @Serializable
-data class ComicPrice(
+data class ResponseComicPrice(
     val type: String,
     val price: Float
 )
 
 @Serializable
-data class Sublist<T : Sublist.Summary>(
+data class ResponseSummaryList<T : ResponseSummaryList.Summary>(
     val available: Int,
     val returned: Int,
     val collectionURI: String,
@@ -108,34 +108,34 @@ data class Sublist<T : Sublist.Summary>(
 }
 
 @Serializable
-data class Image(
+data class ResponseImage(
     val path: String,
     val extension: String
 )
 
 @Serializable
-data class CreatorSummary(
+data class ResponseCreatorSummary(
     val resourceURI: String,
     val name: String,
     val role: String
-) : Sublist.Summary
+) : ResponseSummaryList.Summary
 
 @Serializable
-data class CharacterSummary(
+data class ResponseCharacterSummary(
     val resourceURI: String,
     val name: String,
     val role: String? = null
-) : Sublist.Summary
+) : ResponseSummaryList.Summary
 
 @Serializable
-data class StorySummary(
+data class ResponseStorySummary(
     val resourceURI: String,
     val name: String,
     val type: String
-) : Sublist.Summary
+) : ResponseSummaryList.Summary
 
 @Serializable
-data class EventSummary(
+data class ResponseEventSummary(
     val resourceURI: String,
     val name: String
-) : Sublist.Summary
+) : ResponseSummaryList.Summary

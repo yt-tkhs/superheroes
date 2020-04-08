@@ -42,4 +42,8 @@ dependencies {
 
     implementation(Deps.Lifecycle.viewModelKtx)
     implementation(Deps.Lifecycle.commonJava8)
+
+    implementation(Deps.Ktor.androidCore)
+
+    implementation(Deps.coil)
 }

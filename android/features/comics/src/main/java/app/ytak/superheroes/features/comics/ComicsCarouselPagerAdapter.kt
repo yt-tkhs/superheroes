@@ -3,7 +3,8 @@ package app.ytak.superheroes.features.comics
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import app.ytak.superheroes.data.dto.Comic
+import app.ytak.superheroes.data.dto.ResponseComic
+import app.ytak.superheroes.data.model.Comic
 
 class ComicsCarouselPagerAdapter(
     fm: FragmentManager,

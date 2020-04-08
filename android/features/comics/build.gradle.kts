@@ -56,6 +56,8 @@ dependencies {
     implementation(Deps.Koin.android)
     implementation(Deps.Koin.androidViewModel)
 
+    implementation(Deps.Ktor.androidCore)
+
     implementation(Deps.Insetter.core)
     implementation(Deps.Insetter.ktx)
 
