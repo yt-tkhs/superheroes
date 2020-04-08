@@ -7,7 +7,7 @@ import kotlinx.serialization.internal.StringDescriptor
 @Serializer(forClass = DateTimeTz::class)
 object DateTimeTzSerializer : KSerializer<DateTimeTz> {
 
-    private val dateFormat by lazy { DateFormat("yyyy-MM-dd'T'HH:mm:ssZ") }
+    private val dateFormat by lazy { DateFormat("yyyy-MM-dd'T'HH:mm:ssz") }
 
     override val descriptor: SerialDescriptor =
         PrimitiveDescriptorWithName("DateTimeTzSerializer", StringDescriptor)

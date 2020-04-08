@@ -23,7 +23,7 @@ object Versions {
     const val coroutines = "1.3.3-native-mt"
     const val koin = "3.0.0-alpha-8"
     const val kotlinNativeCocoapods = "0.6"
-    const val klock = "1.7.0"
+    const val klock = "1.9.1"
     const val buildKonfig = "0.5.0"
 }
 
