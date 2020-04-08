@@ -3,6 +3,7 @@ include(":android:app")
 include(":android:core")
 include(":android:common:extfun")
 include(":android:common:widget")
+include(":android:features:comicdetail")
 include(":android:features:comics")
 
 // Shared
