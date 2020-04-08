@@ -2,8 +2,10 @@
     
 # Superheroes
 
-Superheros is an experimental project for Kotlin multiplatform using [the Marvel Comics API](https://developer.marvel.com/).
+Superheroes is an experimental project for Kotlin multiplatform using [the Marvel Comics API](https://developer.marvel.com/).
 
+<br />
+<br />
 <br />
 <br />
 <br />
@@ -29,7 +31,12 @@ TBD
 
 ## How to Build
 
-To build this project, you need to set followings values in `local.properties`.
+First, you need to use Android Studio 4.0.0-beta03 (or higher) to be able to build the app.
+
+### API Key
+
+You need to set followings key-values in `local.properties`.
+The values are read at [here](https://github.com/yt-tkhs/superheroes/blob/master/shared/data/build.gradle.kts).
 
 | Key | Value |
 |:----|:------|
