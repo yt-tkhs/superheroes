@@ -12,7 +12,7 @@ object Versions {
     const val androidX = "1.1.0"
     const val navigation = "2.3.0-alpha04"
     const val lifecycle = "2.3.0-alpha01"
-    const val androidGradlePlugin = "4.0.0-beta03"
+    const val androidGradlePlugin = "4.0.0-beta04"
     const val junit = "4.12"
     const val sqlDelight = "1.2.1"
     const val ktor = "1.2.6"
