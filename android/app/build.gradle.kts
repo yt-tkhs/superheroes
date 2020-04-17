@@ -39,7 +39,9 @@ android {
 
 dependencies {
     implementation(project(":shared:core"))
+    implementation(project(":android:core"))
     implementation(project(":android:features:comics"))
+    implementation(project(":android:features:comicdetail"))
     implementation(project(":android:common:extfun"))
 
     implementation(kotlin("stdlib-jdk8", Versions.kotlin))

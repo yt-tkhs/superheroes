@@ -55,6 +55,7 @@ object Deps {
     }
 
     object Navigation {
+        const val safeArgsGradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
         const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
         const val uiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
         const val testing = "androidx.navigation:navigation-testing:${Versions.navigation}"

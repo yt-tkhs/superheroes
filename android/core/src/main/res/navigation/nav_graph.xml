@@ -7,7 +7,17 @@
     <fragment
         android:id="@+id/destination_comics"
         android:name="app.ytak.superheroes.features.comics.ComicsFragment"
-        android:label="Comics" />
+        android:label="Comics">
+
+        <action
+            android:id="@+id/to_comic_detail"
+            app:destination="@id/destination_comic_detail"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/destination_series"
@@ -18,4 +28,14 @@
         android:id="@+id/destination_characters"
         android:name="app.ytak.superheroes.characters.CharactersFragment"
         android:label="Characters" />
+
+    <fragment
+        android:id="@+id/destination_comic_detail"
+        android:name="app.ytak.superheroes.features.comicdetail.ComicDetailFragment"
+        android:label="Comic Detail">
+
+        <argument
+            android:name="comic_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

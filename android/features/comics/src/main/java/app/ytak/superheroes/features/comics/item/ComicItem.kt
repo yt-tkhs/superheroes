@@ -9,7 +9,10 @@ import app.ytak.superheroes.features.comics.databinding.ComicsComicItemBinding
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
 
-class ComicItem(private val comic: Comic) : Item<GroupieViewHolder>(comic.id.longHashCode) {
+class ComicItem(
+    private val comic: Comic,
+    private val onClick: ((Comic) -> Unit)? = null
+) : Item<GroupieViewHolder>(comic.id.longHashCode) {
 
     override fun getLayout(): Int = R.layout.comics_comic_item
 
@@ -22,6 +25,12 @@ class ComicItem(private val comic: Comic) : Item<GroupieViewHolder>(comic.id.lon
                 placeholder(R.color.black)
             }
             titleText.text = comic.title
+            onClick?.let { thumbnailImage.setOnClickListener { onClick.invoke(comic) } }
         }
     }
+
+    override fun equals(other: Any?): Boolean =
+        other is ComicItem && comic == other.comic
+
+    override fun hashCode(): Int = comic.hashCode()
 }

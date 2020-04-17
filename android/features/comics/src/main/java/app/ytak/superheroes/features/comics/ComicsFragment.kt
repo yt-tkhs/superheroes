@@ -4,18 +4,20 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.updatePaddingRelative
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.SimpleItemAnimator
 import app.ytak.superheroes.common.extfun.bottomNavigationHeight
 import app.ytak.superheroes.common.extfun.fadeIn
 import app.ytak.superheroes.common.extfun.observeNotNull
 import app.ytak.superheroes.core.AsyncListState
 import app.ytak.superheroes.core.AsyncState
+import app.ytak.superheroes.core.LeftTopRoundOutlineProvider
 import app.ytak.superheroes.core.autoCleared
 import app.ytak.superheroes.features.comics.databinding.ComicsFragmentBinding
 import app.ytak.superheroes.features.comics.item.ComicItem
 import app.ytak.superheroes.features.comics.item.SearchBarItem
 import app.ytak.superheroes.features.comics.item.SubHeaderItem
-import app.ytak.superheroes.core.LeftTopRoundOutlineProvider
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
@@ -49,6 +51,7 @@ class ComicsFragment : Fragment(R.layout.comics_fragment) {
                 }
             }
             adapter = groupAdapter
+            (itemAnimator as? SimpleItemAnimator)?.supportsChangeAnimations = false
         }
         binding.viewPager.adapter = viewPagerAdapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
@@ -87,7 +90,11 @@ class ComicsFragment : Fragment(R.layout.comics_fragment) {
                     groupAdapter.updateAsync(buildList<Item<*>> {
                         add(SearchBarItem())
                         add(SubHeaderItem(R.string.comics_sub_header_releasing_this_month))
-                        addAll(state.data.map { ComicItem(it) })
+                        addAll(state.data.map { comic ->
+                            ComicItem(comic) {
+                                findNavController().navigate(ComicsFragmentDirections.toComicDetail(comic.id.value))
+                            }
+                        })
                     })
                 }
                 is AsyncListState.Failure -> {

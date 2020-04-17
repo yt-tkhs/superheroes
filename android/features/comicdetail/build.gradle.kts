@@ -53,6 +53,14 @@ dependencies {
     kapt(Deps.Lifecycle.compiler)
     implementation(Deps.Lifecycle.commonJava8)
 
+    implementation(Deps.Koin.android)
+    implementation(Deps.Koin.androidViewModel)
+
+    implementation(Deps.Navigation.fragmentKtx)
+    implementation(Deps.Navigation.uiKtx)
+
+    implementation(Deps.Ktor.androidCore)
+
     implementation(Deps.Insetter.core)
     implementation(Deps.Insetter.ktx)
 

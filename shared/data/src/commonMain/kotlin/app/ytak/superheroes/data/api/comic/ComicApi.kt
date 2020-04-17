@@ -5,6 +5,7 @@ import app.ytak.superheroes.data.api.comic.query.*
 import app.ytak.superheroes.data.authorized
 import app.ytak.superheroes.data.dto.ComicResponse
 import app.ytak.superheroes.data.marvelUrl
+import app.ytak.superheroes.data.model.Id
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
@@ -20,6 +21,10 @@ interface ComicApi {
         limit: Int? = null,
         offset: Int? = null,
         orderBy: OrderBy<OrderByAttribute>? = null
+    ): ComicResponse
+
+    suspend fun fetchComic(
+        id: Id.Comic
     ): ComicResponse
 }
 
@@ -45,5 +50,12 @@ internal class ComicApiImpl(private val httpClient: HttpClient) : ComicApi {
         limit?.let { parameter("limit", it) }
         offset?.let { parameter("offset", it) }
         orderBy?.let { parameter("orderBy", it.code) }
+    }
+
+    override suspend fun fetchComic(
+        id: Id.Comic
+    ): ComicResponse = httpClient.get {
+        authorized()
+        marvelUrl("comics/${id.value}")
     }
 }

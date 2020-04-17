@@ -56,6 +56,9 @@ dependencies {
     implementation(Deps.Koin.android)
     implementation(Deps.Koin.androidViewModel)
 
+    implementation(Deps.Navigation.fragmentKtx)
+    implementation(Deps.Navigation.uiKtx)
+
     implementation(Deps.Ktor.androidCore)
 
     implementation(Deps.Insetter.core)

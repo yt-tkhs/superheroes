@@ -9,4 +9,6 @@ sealed class Id<T : Any>(open val value: T) {
 
     val longHashCode
         get() = value.hashCode().toLong()
+
+    override fun toString(): String = value.toString()
 }

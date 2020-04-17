@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textview.MaterialTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/descriptionText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/margin_medium"
+    android:paddingTop="@dimen/margin_small"
+    android:paddingEnd="@dimen/margin_medium"
+    android:paddingBottom="@dimen/margin_small"
+    android:textAppearance="?textAppearanceBody1"
+    android:textColor="@color/text_white_secondary"
+    tools:maxLines="5"
+    tools:text="@tools:sample/lorem/random"
+    />

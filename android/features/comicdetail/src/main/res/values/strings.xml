@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="comic_detail_view_detail">View Detail</string>
+    <string name="comic_detail_buy_now">Buy Now</string>
+</resources>

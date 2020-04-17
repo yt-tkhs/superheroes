@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_medium"
+    tools:background="?colorSurface"
+    >
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?textAppearanceHeadline5"
+        android:textStyle="bold"
+        tools:text="Strange Academy (2020) #2"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/metaText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_x_small"
+        android:textAppearance="?textAppearanceCaption"
+        android:textColor="#FCC200"
+        tools:text="$3.99・Onsale on March 25, 2020"
+        />
+</LinearLayout>

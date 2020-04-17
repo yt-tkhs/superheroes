@@ -10,6 +10,7 @@ buildscript {
         classpath(Deps.SqlDelight.gradle)
         classpath(Deps.kotlinNativeCocoapods)
         classpath(Deps.buildKonfig)
+        classpath(Deps.Navigation.safeArgsGradlePlugin)
     }
 }
 

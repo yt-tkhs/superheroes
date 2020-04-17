@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -43,6 +44,9 @@ dependencies {
 
     implementation(Deps.Koin.android)
     implementation(Deps.Koin.androidViewModel)
+
+    implementation(Deps.Navigation.fragmentKtx)
+    implementation(Deps.Navigation.uiKtx)
 
     testImplementation(Deps.junit)
     androidTestImplementation(Deps.AndroidXTest.junit)
