@@ -2,22 +2,22 @@ package app.ytak.superheroes.features.comics
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.doOnPreDraw
 import androidx.core.view.updatePaddingRelative
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.SimpleItemAnimator
 import app.ytak.superheroes.common.extfun.bottomNavigationHeight
 import app.ytak.superheroes.common.extfun.fadeIn
 import app.ytak.superheroes.common.extfun.observeNotNull
-import app.ytak.superheroes.core.AsyncListState
-import app.ytak.superheroes.core.AsyncState
-import app.ytak.superheroes.core.LeftTopRoundOutlineProvider
-import app.ytak.superheroes.core.autoCleared
+import app.ytak.superheroes.core.*
 import app.ytak.superheroes.features.comics.databinding.ComicsFragmentBinding
 import app.ytak.superheroes.features.comics.item.ComicItem
 import app.ytak.superheroes.features.comics.item.SearchBarItem
 import app.ytak.superheroes.features.comics.item.SubHeaderItem
+import com.google.android.material.transition.Hold
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
@@ -27,14 +27,27 @@ import timber.log.Timber
 
 class ComicsFragment : Fragment(R.layout.comics_fragment) {
 
+    companion object {
+        private const val KEY_LAYOUT_MANAGER = "layout_manager"
+    }
+
     private var binding by autoCleared<ComicsFragmentBinding>()
     private val viewModel by sharedViewModel<ComicsViewModel>()
     private val viewPagerAdapter by lazy { ComicsCarouselPagerAdapter(childFragmentManager, false) }
     private val groupAdapter = GroupAdapter<GroupieViewHolder>()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        exitTransition = Hold().apply {
+            duration = AppDuration.SLOW
+        }
+    }
+
     @UseExperimental(ExperimentalStdlibApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        postponeEnterTransition()
+        requireView().doOnPreDraw { startPostponedEnterTransition() }
         binding = ComicsFragmentBinding.bind(view)
         binding.recyclerView.run {
             outlineProvider = LeftTopRoundOutlineProvider(32)
@@ -91,8 +104,11 @@ class ComicsFragment : Fragment(R.layout.comics_fragment) {
                         add(SearchBarItem())
                         add(SubHeaderItem(R.string.comics_sub_header_releasing_this_month))
                         addAll(state.data.map { comic ->
-                            ComicItem(comic) {
-                                findNavController().navigate(ComicsFragmentDirections.toComicDetail(comic.id.value))
+                            ComicItem(comic) { view, _ ->
+                                findNavController().navigate(
+                                    ComicsFragmentDirections.toComicDetail(comic.id.value),
+                                    FragmentNavigatorExtras(view.root to view.root.transitionName)
+                                )
                             }
                         })
                     })

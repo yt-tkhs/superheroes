@@ -38,6 +38,7 @@ dependencies {
 
     implementation(Deps.AndroidX.coreKtx)
     implementation(Deps.AndroidX.appCompat)
+    implementation(Deps.material)
 
     implementation(Deps.Lifecycle.liveDataKtx)
     implementation(Deps.Lifecycle.commonJava8)

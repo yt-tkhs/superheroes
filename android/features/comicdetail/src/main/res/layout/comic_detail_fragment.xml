@@ -2,6 +2,7 @@
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?colorSurface"
@@ -34,7 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 />
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/thumbnailImage"
                 android:layout_width="140dp"
                 android:layout_height="0dp"
@@ -46,6 +47,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ComicThumbnailImageView"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

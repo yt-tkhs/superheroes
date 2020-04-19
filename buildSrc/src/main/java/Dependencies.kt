@@ -29,7 +29,7 @@ object Versions {
 
 object Deps {
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
-    const val material = "com.google.android.material:material:1.2.0-alpha05"
+    const val material = "com.google.android.material:material:1.2.0-alpha06"
     const val stately = "co.touchlab:stately:${Versions.stately}"
     const val kotlinNativeCocoapods = "co.touchlab:kotlinnativecocoapods:${Versions.kotlinNativeCocoapods}"
     const val klock = "com.soywiz.korlibs.klock:klock:${Versions.klock}"
